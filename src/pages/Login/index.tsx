@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 
 import Input from 'components/Input';
-import StoneLogo from 'assets/stone-logo.svg';
-import { Button } from 'components/Button';
+import LoginTemplate from 'templates/Login';
 import { useForm, masks } from 'hooks/use-form';
 import { useGlobalContext } from 'hooks/use-global';
 import { ToastError, ToastSuccess } from 'components/Toasts';
 import { requiredFieldsMessage } from 'helpers/commonMessages';
 
 import { signIn } from 'services/analysts';
-import * as S from './styles';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -34,43 +32,34 @@ const Login = () => {
   };
 
   return (
-    <S.Wrapper>
-      <div className="photo">
-        <img src={StoneLogo} alt="Stone Logo" />
-      </div>
-
-      <section className="login">
-        <form className="content" onSubmit={handleSubmit}>
-          <h1 className="content__header">
-            <span>Welcome back</span>
-            Login to your account
-          </h1>
-
-          <Input
-            type="text"
-            label="E-mail"
-            placeholder="example@stone.com"
-            name="email"
-            value={email.value}
-            onChange={email.onChange}
-            onBlur={email.onBlur}
-            error={email.error}
-          />
-          <Input
-            label="Senha"
-            placeholder="********"
-            name="password"
-            type="password"
-            isPassword
-            value={password.value}
-            onChange={password.onChange}
-            onBlur={password.onBlur}
-            error={password.error}
-          />
-          <Button className="content__button">Entrar</Button>
-        </form>
-      </section>
-    </S.Wrapper>
+    <LoginTemplate
+      title="Entre na sua conta"
+      subtitle="Bem-vindo de volta!"
+      buttonLabel="Entrar"
+      handleSubmit={handleSubmit}
+    >
+      <Input
+        type="text"
+        label="E-mail"
+        placeholder="example@stone.com"
+        name="email"
+        value={email.value}
+        onChange={email.onChange}
+        onBlur={email.onBlur}
+        error={email.error}
+      />
+      <Input
+        label="Senha"
+        placeholder="********"
+        name="password"
+        type="password"
+        isPassword
+        value={password.value}
+        onChange={password.onChange}
+        onBlur={password.onBlur}
+        error={password.error}
+      />
+    </LoginTemplate>
   );
 };
 
