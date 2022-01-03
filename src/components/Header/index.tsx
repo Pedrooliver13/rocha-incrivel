@@ -39,26 +39,26 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className={(isOpen && 'is-active') + ' content__mobile'}>
+        <div className={'content__mobile ' + (isOpen && 'is-active')}>
           <Logo />
 
-          <div className="button__open" onClick={handleToggle}>
+          <div onClick={handleToggle}>
             <MenuAltRight width={35} />
           </div>
 
-          <div className="content__mobile-backdrop" onClick={handleToggle} />
+          <div className="content__mobile--backdrop" onClick={handleToggle} />
 
-          <div className="content__mobile-menu">
-            <header className="content__mobile-menu-header">
+          <div className="content__mobile--menu">
+            <header className="mobile-menu--header">
               <Logo />
               <CloseCircle
-                className="content__mobile-menu-header-close"
+                className="menu-header__close"
                 width={35}
                 onClick={handleToggle}
               />
             </header>
 
-            <ul className="content__mobile-menu-body">
+            <ul className="mobile-menu--body">
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <NavLink to={item.path}>{item.title}</NavLink>
@@ -66,7 +66,7 @@ const Header = () => {
               ))}
             </ul>
 
-            <footer className="content__mobile-menu-footer">
+            <footer className="mobile-menu--footer">
               <Link to="/sign-in" onClick={userLogout}>
                 <LogOut width={20} className="icon" />
                 Sair
