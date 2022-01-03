@@ -16,9 +16,11 @@ export const XL = '75rem';
 
 // COLORS
 export const COLOR_PRIMARY = '#04C35C';
-export const COLOR_SECONDARY = '#2D3748';
+export const COLOR_SECONDARY = '#20252A';
 export const COLOR_WHITE = '#FFFFFF';
+export const COLOR_BLACK = '#000000';
 export const COLOR_GRAY = '#4A5568';
 export const COLOR_GRAY_DARK = '#757575';
 export const COLOR_GRAY_LIGHT = '#E8E8E8';
 export const COLOR_ERROR = '#E02041';
+export const COLOR_SUCCESS = '#2ECC71';

@@ -1,4 +1,4 @@
-import { Button } from 'components/Button';
+import Button from 'components/Button';
 import { Props } from 'types/SectionMain';
 
 import * as S from './styles';
