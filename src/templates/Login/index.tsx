@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'components/Button';
+import Button from 'components/Button';
 import { Props } from 'types/templates/login';
 import StoneLogo from 'assets/stone-logo.svg';
 
