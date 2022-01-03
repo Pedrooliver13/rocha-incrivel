@@ -8,44 +8,38 @@ const Button: React.FC<Props> = ({
   deleteTheme,
   disabled,
   className,
+  href,
+  onClick,
   icon
 }) => {
   return (
-    <S.WrapperButton
-      deleteTheme={deleteTheme}
-      secondary={secondary}
-      disabled={disabled}
-      className={className}
-    >
-      {icon && <div className="icon">{icon}</div>}
-      {children}
-    </S.WrapperButton>
+    <>
+      {!href ? (
+        <S.WrapperButton
+          deleteTheme={deleteTheme}
+          secondary={secondary}
+          disabled={disabled}
+          className={className}
+          onClick={onClick}
+        >
+          {icon && <div className="icon">{icon}</div>}
+          {children}
+        </S.WrapperButton>
+      ) : (
+        <S.WrapperLink
+          to={href}
+          deleteTheme={deleteTheme}
+          secondary={secondary}
+          disabled={disabled}
+          className={className}
+          onClick={onClick}
+        >
+          {icon && <div className="icon">{icon}</div>}
+          {children}
+        </S.WrapperLink>
+      )}
+    </>
   );
 };
 
-const LinkButton: React.FC<Props> = ({
-  children,
-  secondary,
-  disabled,
-  href,
-  className,
-  onClick,
-  icon,
-  deleteTheme
-}) => {
-  return (
-    <S.WrapperLink
-      href={href}
-      deleteTheme={deleteTheme}
-      secondary={secondary}
-      disabled={disabled}
-      className={className}
-      onClick={onClick}
-    >
-      {icon && <div className="icon">{icon}</div>}
-      {children}
-    </S.WrapperLink>
-  );
-};
-
-export { Button, LinkButton };
+export default Button;

@@ -8,5 +8,9 @@ export type Props = {
   href?: string;
   icon?: React.ReactNode;
   deleteTheme?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  onClick?: (
+    event:
+      | React.MouseEvent<HTMLAnchorElement, MouseEvent>
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 };

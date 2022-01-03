@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { Props } from 'types/Button';
 import * as C from 'styles/constants';
@@ -68,7 +69,7 @@ export const WrapperButton = styled.button<Props>`
   `}
 `;
 
-export const WrapperLink = styled.a<Props>`
+export const WrapperLink = styled(Link)<Props>`
   ${Wrapper};
 
   ${({ secondary, deleteTheme, disabled }) => css`
