@@ -5,6 +5,6 @@ export const Wrapper = styled.div`
 
   img {
     width: 12.2rem;
-    height: 3.4rem;
+    height: 2.4rem;
   }
 `;
