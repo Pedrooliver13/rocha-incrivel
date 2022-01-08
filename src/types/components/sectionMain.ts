@@ -1,6 +1,6 @@
 export type Props = {
   title: string;
   subtitle?: string;
-  buttonText: string;
+  buttonText?: string;
   buttonHref?: string;
 };

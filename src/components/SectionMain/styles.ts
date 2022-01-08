@@ -1,7 +1,15 @@
 import styled from 'styled-components';
 import * as C from 'styles/constants';
 
+import EllipseTopImage from 'assets/ellipse.svg';
+import Ellipse2BottomImage from 'assets/ellipse2.svg';
+
 export const Wrapper = styled.section`
+  background-image: url(${EllipseTopImage}), url(${Ellipse2BottomImage});
+  background-size: 58% 55%;
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
   justify-content: center;
