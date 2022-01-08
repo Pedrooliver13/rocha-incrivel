@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Button from 'components/Button';
-import { Props } from 'types/templates/login';
+import { FormTemplateProps } from 'types/templates/formTemplate';
 import StoneLogo from 'assets/stone-logo.svg';
 
 import * as S from './styles';
 
-const FormTemplate: React.FC<Props> = ({
+const FormTemplate: React.FC<FormTemplateProps> = ({
   children,
   handleSubmit,
   title,
