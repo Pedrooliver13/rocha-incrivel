@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Props } from 'types/templates/tableUsers';
+import { UserType } from 'types/api/users';
 import { masks } from 'helpers/masks';
 import {
   formatDate,
@@ -9,7 +9,7 @@ import {
   abbreviatesStrings
 } from 'helpers/formatFunctions';
 
-const TableUsersRow: React.FC<Props> = ({
+const TableUsersRow: React.FC<UserType> = ({
   name,
   email,
   BirthDate,
