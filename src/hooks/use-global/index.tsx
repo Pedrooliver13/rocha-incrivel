@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { ToastSuccess } from 'components/Toasts';
 import { signIn } from 'services/analysts';
-import { AnalystsType } from 'types/Api/analysts';
+import { AnalystsType } from 'types/api/analysts';
 
 export type GlobalContextProps = {
   loggedUserData: AnalystsType | null;
