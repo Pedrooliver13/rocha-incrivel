@@ -1,11 +1,11 @@
-import { Props } from 'types/Button';
+import { Props } from 'types/components/button';
 
 import * as S from './styles';
 
 const Button: React.FC<Props> = ({
   children,
   secondary,
-  deleteTheme,
+  tertiary,
   disabled,
   className,
   href,
@@ -16,8 +16,8 @@ const Button: React.FC<Props> = ({
     <>
       {!href ? (
         <S.WrapperButton
-          deleteTheme={deleteTheme}
-          secondary={secondary}
+          tertiary={tertiary?.toString()}
+          secondary={secondary?.toString()}
           disabled={disabled}
           className={className}
           onClick={onClick}
@@ -28,8 +28,8 @@ const Button: React.FC<Props> = ({
       ) : (
         <S.WrapperLink
           to={href}
-          deleteTheme={deleteTheme}
-          secondary={secondary}
+          tertiary={tertiary?.toString()}
+          secondary={secondary?.toString()}
           disabled={disabled}
           className={className}
           onClick={onClick}

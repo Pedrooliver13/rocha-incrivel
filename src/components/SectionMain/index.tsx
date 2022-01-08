@@ -1,5 +1,5 @@
 import Button from 'components/Button';
-import { Props } from 'types/SectionMain';
+import { Props } from 'types/components/sectionMain';
 
 import * as S from './styles';
 
@@ -17,11 +17,13 @@ const SectionMain = ({
           <span>{subtitle}</span>
         </div>
 
-        <div className="buttons">
-          <Button href={buttonHref} secondary>
-            {buttonText}
-          </Button>
-        </div>
+        {buttonText && buttonHref && (
+          <div className="buttons">
+            <Button href={buttonHref} secondary>
+              {buttonText}
+            </Button>
+          </div>
+        )}
       </div>
     </S.Wrapper>
   );

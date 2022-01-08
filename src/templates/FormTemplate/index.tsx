@@ -6,7 +6,7 @@ import StoneLogo from 'assets/stone-logo.svg';
 
 import * as S from './styles';
 
-const LoginTemplate: React.FC<Props> = ({
+const FormTemplate: React.FC<Props> = ({
   children,
   handleSubmit,
   title,
@@ -34,4 +34,4 @@ const LoginTemplate: React.FC<Props> = ({
   );
 };
 
-export default LoginTemplate;
+export default FormTemplate;
