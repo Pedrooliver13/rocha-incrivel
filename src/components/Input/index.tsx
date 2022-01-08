@@ -1,7 +1,7 @@
 import { EyeSlash, Eye } from '@styled-icons/bootstrap';
 import { useState } from 'react';
 
-import { Props } from 'types/Input';
+import { Props } from 'types/components/input';
 import * as S from './styles';
 
 const Input = ({
@@ -14,6 +14,7 @@ const Input = ({
   error,
   onChange,
   defaultValue,
+  required,
   isPassword
 }: Props) => {
   const [inputType, setInputType] = useState(type);
@@ -30,7 +31,7 @@ const Input = ({
   return (
     <S.Wrapper hasError={!!error}>
       <label className="label" htmlFor={name}>
-        {label}
+        {label} {required && <span>*</span>}
       </label>
       <input
         className="input"
