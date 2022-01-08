@@ -1,4 +1,4 @@
-export type Props = {
+export type UserType = {
   id?: number;
   name?: string;
   BirthDate?: string;
