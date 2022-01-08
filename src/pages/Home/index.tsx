@@ -1,5 +1,5 @@
 import Base from 'templates/Base';
-import ListCards from 'templates/ListCards';
+import TableAnalyst from 'templates/TableAnalyst';
 import SectionMain from 'components/SectionMain';
 import { useGlobalContext } from 'hooks/use-global';
 
@@ -16,7 +16,7 @@ const Home = () => {
         buttonHref="/users"
       />
 
-      <ListCards />
+      <TableAnalyst />
     </Base>
   );
 };
