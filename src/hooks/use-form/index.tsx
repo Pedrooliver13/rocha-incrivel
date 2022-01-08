@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Props } from 'types/use-form';
-import { masks } from 'hooks/use-form/constans';
+import { Props } from 'types/hooks/use-form';
+import { masks } from 'helpers/masks';
 import { requiredFieldMessage } from 'helpers/commonMessages';
 
 const useForm = (props?: Props) => {
