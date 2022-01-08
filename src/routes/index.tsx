@@ -8,16 +8,18 @@ import Audits from 'pages/Audits';
 import Page404 from 'pages/Page404';
 import { PrivateRoute } from 'routes/PrivateRoute';
 
+import { ERoles } from 'routes/PrivateRoute/constants';
+
 const Routes = () => {
   return (
     <Switch>
       <Route path="/sign-in" element={<Login />} />
 
-      <Route path="/audits" element={<PrivateRoute />}>
+      <Route element={<PrivateRoute roles={[ERoles.allAcess]} />}>
         <Route path="/audits" element={<Audits />} />
       </Route>
 
-      <Route path="/" element={<PrivateRoute />}>
+      <Route element={<PrivateRoute />}>
         <Route path="/cards" element={<Cards />} />
         <Route path="/users" element={<Users />} />
         <Route path="/" element={<Home />} caseSensitive />

@@ -29,7 +29,10 @@ export const signIn = async (email: string, password: string) => {
       return;
     }
 
-    Cookies.set('token', JSON.stringify({ email, password }));
+    Cookies.set(
+      'token',
+      JSON.stringify({ email, password, roles: analyst.roles })
+    );
     return analyst;
   } catch (error) {
     ToastError('Erro ao realizar login');
