@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
 import Input from 'components/Input';
-import LoginTemplate from 'templates/Login';
+import FormTemplate from 'templates/FormTemplate';
 import { useForm, masks } from 'hooks/use-form';
 import { useGlobalContext } from 'hooks/use-global';
 import { ToastError, ToastSuccess } from 'components/Toasts';
-import { requiredFieldsMessage } from 'helpers/commonMessages';
 
+import { requiredFieldsMessage } from 'helpers/commonMessages';
 import { signIn } from 'services/analysts';
 
 const Login = () => {
@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <LoginTemplate
+    <FormTemplate
       title="Entre na sua conta"
       subtitle="Bem-vindo de volta!"
       buttonLabel="Entrar"
@@ -47,6 +47,7 @@ const Login = () => {
         onChange={email.onChange}
         onBlur={email.onBlur}
         error={email.error}
+        required
       />
       <Input
         label="Senha"
@@ -58,8 +59,9 @@ const Login = () => {
         onChange={password.onChange}
         onBlur={password.onBlur}
         error={password.error}
+        required
       />
-    </LoginTemplate>
+    </FormTemplate>
   );
 };
 
