@@ -1,17 +1,22 @@
 import React from 'react';
 
-import { Props } from 'types/components/sectionList';
+import { SectionListProps } from 'types/components/sectionList';
 import { Container } from 'styles/container';
 
 import * as S from './styles';
 
-const SectionList: React.FC<Props> = ({ children, isTable, title }) => {
+const SectionList: React.FC<SectionListProps> = ({
+  children,
+  isTable,
+  components,
+  title
+}) => {
   return (
     <Container>
       <S.Wrapper>
         <div className="content">
           <div className="content--title">
-            <h1>{title}</h1>
+            <h1>{title}</h1> {components}
           </div>
           {isTable ? (
             <>{children}</>

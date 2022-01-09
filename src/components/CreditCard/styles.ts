@@ -61,6 +61,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     text-align: center;
     line-height: 2;
+    font-size: 1.3rem;
     padding: 1rem 1.8rem;
   }
 

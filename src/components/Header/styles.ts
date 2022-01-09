@@ -120,11 +120,14 @@ export const Wrapper = styled.header`
     ul {
       width: 40%;
       font-size: 1.5rem;
-      font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: ${C.COLOR_BLACK};
+
+      .active {
+        color: ${C.COLOR_BLACK};
+        font-weight: bold;
+      }
 
       li {
         cursor: pointer;
