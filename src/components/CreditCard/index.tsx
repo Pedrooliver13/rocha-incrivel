@@ -4,8 +4,11 @@ import { Props } from 'types/components/creditCard';
 import { abbreviatesStrings } from 'helpers/formatFunctions';
 
 import * as S from './styles';
+import { useGlobalContext } from 'hooks/use-global';
 
 const CreditCard = ({ status, metadatas }: Props) => {
+  const { hasAllPermission } = useGlobalContext();
+
   return (
     <S.Wrapper>
       <div className="card">
@@ -20,7 +23,7 @@ const CreditCard = ({ status, metadatas }: Props) => {
       </div>
       <div className="info">
         <p>Digits: {metadatas.digits}</p>
-        <p>Limit: {metadatas.limit}</p>
+        <p>Limit: {hasAllPermission ? metadatas.limit : '[Sem Permissão]'}</p>
         <p>Status: {status}</p>
       </div>
     </S.Wrapper>
