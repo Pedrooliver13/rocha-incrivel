@@ -19,7 +19,7 @@ const SectionMain = ({
 
         {buttonText && buttonHref && (
           <div className="buttons">
-            <Button href={buttonHref} secondary>
+            <Button isLink href={buttonHref} secondary>
               {buttonText}
             </Button>
           </div>
