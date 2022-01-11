@@ -1,7 +1,7 @@
 import { EyeSlash, Eye } from '@styled-icons/bootstrap';
 import { useState } from 'react';
 
-import { Props } from 'types/components/input';
+import { InputProps } from 'types/components/input';
 import * as S from './styles';
 
 const Input = ({
@@ -15,8 +15,9 @@ const Input = ({
   onChange,
   defaultValue,
   required,
+  disabled,
   isPassword
-}: Props) => {
+}: InputProps) => {
   const [inputType, setInputType] = useState(type);
   const [showPassword, setShowPassword] = useState(true);
 
@@ -29,7 +30,7 @@ const Input = ({
   };
 
   return (
-    <S.Wrapper hasError={!!error}>
+    <S.Wrapper hasError={!!error} disabled={disabled}>
       <label className="label" htmlFor={name}>
         {label} {required && <span>*</span>}
       </label>
@@ -43,6 +44,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}
+        disabled={disabled}
       />
       {isPassword && (
         <div className="icon" onClick={handleShowPassword}>

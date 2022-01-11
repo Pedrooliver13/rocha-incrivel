@@ -8,6 +8,7 @@ export type Props = {
   href?: string;
   icon?: React.ReactNode;
   tertiary?: boolean | string;
+  isLink?: boolean;
   onClick?: (
     event:
       | React.MouseEvent<HTMLAnchorElement, MouseEvent>

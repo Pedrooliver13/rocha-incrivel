@@ -1,9 +1,10 @@
-export type Props = {
+export type InputProps = {
   defaultValue?: string;
   name: string;
   label: string;
-  value: string;
+  value: string | number;
   type: string;
+  disabled?: boolean;
   placeholder?: string;
   isPassword?: boolean;
   required?: boolean;
