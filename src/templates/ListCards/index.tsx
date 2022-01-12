@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import Button from 'components/Button';
 import SectionList from 'components/SectionList';
 import CreditCard from 'components/CreditCard';
-import { Props } from 'types/components/creditCard';
+import { CardType } from 'types/api/cards';
 
 import { getAllCards } from 'services/cards';
 
@@ -14,8 +15,15 @@ const ListCards = () => {
   }, []);
 
   return (
-    <SectionList title="Lista de Cartões">
-      {cards.map((card: Props, index) => (
+    <SectionList
+      title="Lista de Cartões"
+      components={
+        <Button href="/cards/new" isLink secondary>
+          Incluir
+        </Button>
+      }
+    >
+      {cards.map((card: CardType, index) => (
         <CreditCard {...card} key={index} />
       ))}
     </SectionList>
