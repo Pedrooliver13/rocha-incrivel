@@ -5,7 +5,7 @@ import * as C from 'styles/constants';
 import EllipseTopImage from 'assets/ellipse.svg';
 import Ellipse2BottomImage from 'assets/ellipse2.svg';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -4,6 +4,7 @@ import Home from 'pages/Home';
 import Login from 'pages/Login';
 import Users from 'pages/Users';
 import Cards from 'pages/Cards';
+import CardsForm from 'pages/Cards/CardForm';
 import Audits from 'pages/Audits';
 import Page404 from 'pages/Page404';
 import { PrivateRoute } from 'routes/PrivateRoute';
@@ -20,6 +21,8 @@ const Routes = () => {
       </Route>
 
       <Route element={<PrivateRoute />}>
+        <Route path="/cards/:id" element={<CardsForm />} />
+        <Route path="/cards/new" element={<CardsForm />} />
         <Route path="/cards" element={<Cards />} />
         <Route path="/users" element={<Users />} />
         <Route path="/" element={<Home />} caseSensitive />

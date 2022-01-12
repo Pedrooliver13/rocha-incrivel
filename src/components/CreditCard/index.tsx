@@ -1,16 +1,16 @@
 import MasterCardLogo from 'assets/mastercard_logo.svg';
 
-import { Props } from 'types/components/creditCard';
+import { CardType } from 'types/api/cards';
 import { abbreviatesStrings } from 'helpers/formatFunctions';
 
 import * as S from './styles';
 import { useGlobalContext } from 'hooks/use-global';
 
-const CreditCard = ({ status, metadatas }: Props) => {
+const CreditCard = ({ id, status, metadatas }: CardType) => {
   const { hasAllPermission } = useGlobalContext();
 
   return (
-    <S.Wrapper>
+    <S.Wrapper href={`/cards/${id}`}>
       <div className="card">
         <header>
           <h1>CreditCard</h1>

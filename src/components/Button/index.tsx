@@ -9,12 +9,13 @@ const Button: React.FC<Props> = ({
   disabled,
   className,
   href,
+  isLink,
   onClick,
   icon
 }) => {
   return (
     <>
-      {!href ? (
+      {!isLink ? (
         <S.WrapperButton
           tertiary={tertiary?.toString()}
           secondary={secondary?.toString()}
@@ -27,7 +28,7 @@ const Button: React.FC<Props> = ({
         </S.WrapperButton>
       ) : (
         <S.WrapperLink
-          to={href}
+          href={href}
           tertiary={tertiary?.toString()}
           secondary={secondary?.toString()}
           disabled={disabled}

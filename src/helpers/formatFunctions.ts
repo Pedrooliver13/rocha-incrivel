@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-escape */
-import { Props as PropsMasks } from 'types/hooks/use-form';
+import { MaskObject } from 'types/helpers/masks';
 
-export const formatDate = (value?: string) => {
+export const formatDate = (value?: string | Date) => {
   if (!value) return;
 
   const date = new Date(value);
@@ -17,8 +17,8 @@ export const formatMoneyValue = (value?: number) => {
   });
 };
 
-export const formatMask = (value?: number, mask?: PropsMasks) => {
-  if (!value || !mask || !mask.applyMask) return;
+export const formatMask = (value?: number, mask?: MaskObject) => {
+  if (!value || !mask) return;
   return String(value).replace(mask?.regex, mask?.applyMask);
 };
 

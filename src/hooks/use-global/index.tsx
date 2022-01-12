@@ -62,7 +62,7 @@ const GlobalProvider: React.FC = ({ children }) => {
     };
 
     autoLogin();
-  }, []);
+  }, [userLogout]);
 
   return (
     <GlobalContext.Provider

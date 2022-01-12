@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import { Props } from 'types/components/button';
 import * as C from 'styles/constants';
@@ -15,6 +14,7 @@ const buttonModifier = {
     color: `${C.COLOR_WHITE}`
   },
   tertiary: {
+    width: '100%',
     backgroundColor: `${C.COLOR_ERROR}`,
     color: `${C.COLOR_WHITE}`
   },
@@ -69,7 +69,7 @@ export const WrapperButton = styled.button<Props>`
   `}
 `;
 
-export const WrapperLink = styled(Link)<Props>`
+export const WrapperLink = styled.a<Props>`
   ${Wrapper};
 
   ${({ secondary, tertiary, disabled }) => css`

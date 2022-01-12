@@ -5,6 +5,7 @@ export type UserType = {
   email?: string;
   document?: number;
   salaryBase?: number;
+  enabledFeatures?: number[];
   metadatas?: {
     validDocument?: boolean;
     verified?: boolean;

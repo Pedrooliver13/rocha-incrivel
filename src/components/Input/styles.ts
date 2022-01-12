@@ -4,6 +4,7 @@ import * as C from 'styles/constants';
 
 type Props = {
   hasError?: boolean;
+  disabled?: boolean;
 };
 
 export const Wrapper = styled.div<Props>`
@@ -30,6 +31,7 @@ export const Wrapper = styled.div<Props>`
     outline: 0;
     transition: border 0.5s ease;
 
+    ${({ disabled }) => disabled && `cursor: not-allowed; opacity: 0.5;`};
     ${({ hasError }) => hasError && `border: 2px solid ${C.COLOR_ERROR}`};
   }
 
