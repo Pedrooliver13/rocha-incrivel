@@ -1,52 +1,60 @@
 import { useNavigate } from 'react-router-dom';
+import { useFormik, FormikProps } from 'formik';
 
 import Input from 'components/Input';
-import LoginTemplate from 'templates/Login';
-import { useForm, masks } from 'hooks/use-form';
+import FormTemplate from 'templates/FormTemplate';
+import { validationSchema } from 'pages/Login/constants';
+import { ToastSuccess } from 'components/Toasts';
 import { useGlobalContext } from 'hooks/use-global';
-import { ToastError, ToastSuccess } from 'components/Toasts';
-import { requiredFieldsMessage } from 'helpers/commonMessages';
 
 import { signIn } from 'services/analysts';
 
+type LoginForm = {
+  email: string;
+  password: string;
+};
+
 const Login = () => {
+  const { setLoggedUserData } = useGlobalContext();
   const navigate = useNavigate();
 
-  const { setLoggedUserData } = useGlobalContext();
-  const email = useForm(masks.email);
-  const password = useForm();
+  const formik: FormikProps<LoginForm> = useFormik<LoginForm>({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validationSchema,
+    onSubmit: async (values) => {
+      const analyst = await signIn(values.email, values.password);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+      if (!analyst) return;
 
-    const formIsValid = [email.validate(), password.validate()].includes(true);
-    if (!formIsValid) return ToastError(requiredFieldsMessage);
-
-    const analyst = await signIn(email.value, password.value);
-    if (!analyst) return;
-
-    ToastSuccess('Login realizado com sucesso');
-    setLoggedUserData(analyst);
-    navigate('/');
-    return;
-  };
+      ToastSuccess('Login realizado com sucesso');
+      setLoggedUserData(analyst);
+      navigate('/');
+      return;
+    }
+  });
 
   return (
-    <LoginTemplate
+    <FormTemplate
       title="Entre na sua conta"
       subtitle="Bem-vindo de volta!"
       buttonLabel="Entrar"
-      handleSubmit={handleSubmit}
+      handleSubmit={formik.handleSubmit}
     >
       <Input
         type="text"
         label="E-mail"
         placeholder="example@stone.com"
         name="email"
-        value={email.value}
-        onChange={email.onChange}
-        onBlur={email.onBlur}
-        error={email.error}
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        error={
+          formik.touched.email && formik.errors.email ? formik.errors.email : ''
+        }
+        required
       />
       <Input
         label="Senha"
@@ -54,12 +62,17 @@ const Login = () => {
         name="password"
         type="password"
         isPassword
-        value={password.value}
-        onChange={password.onChange}
-        onBlur={password.onBlur}
-        error={password.error}
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        error={
+          formik.touched.password && formik.errors.password
+            ? formik.errors.password
+            : ''
+        }
+        required
       />
-    </LoginTemplate>
+    </FormTemplate>
   );
 };
 

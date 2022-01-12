@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
-import { Props } from 'types/Button';
+import { Props } from 'types/components/button';
 import * as C from 'styles/constants';
 
 const buttonModifier = {
@@ -14,7 +13,8 @@ const buttonModifier = {
     borderRadius: '1rem',
     color: `${C.COLOR_WHITE}`
   },
-  deleteTheme: {
+  tertiary: {
+    width: '100%',
     backgroundColor: `${C.COLOR_ERROR}`,
     color: `${C.COLOR_WHITE}`
   },
@@ -60,22 +60,22 @@ export const Wrapper = `
 export const WrapperButton = styled.button<Props>`
   ${Wrapper};
 
-  ${({ secondary, deleteTheme, disabled }) => css`
+  ${({ secondary, tertiary, disabled }) => css`
     ${!secondary && buttonModifier.primary}
     ${secondary && buttonModifier.secondary}
     ${secondary && buttonModifier.secondary}
-    ${deleteTheme && buttonModifier.deleteTheme}
+    ${tertiary && buttonModifier.tertiary}
     ${disabled && buttonModifier.disabled}
   `}
 `;
 
-export const WrapperLink = styled(Link)<Props>`
+export const WrapperLink = styled.a<Props>`
   ${Wrapper};
 
-  ${({ secondary, deleteTheme, disabled }) => css`
+  ${({ secondary, tertiary, disabled }) => css`
     ${!secondary && buttonModifier.primary}
     ${secondary && buttonModifier.secondary}
-    ${deleteTheme && buttonModifier.deleteTheme}
+    ${tertiary && buttonModifier.tertiary}
     ${disabled && buttonModifier.disabled}
   `}
 `;

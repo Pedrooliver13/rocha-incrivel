@@ -4,15 +4,11 @@ export const menuItems = [
     path: '/users'
   },
   {
-    title: 'Sobre',
-    path: '/about'
-  },
-  {
     title: 'Cartões',
-    path: '/contact'
+    path: '/cards'
   },
   {
     title: 'Auditoria',
-    path: '/contact'
+    path: '/audits'
   }
 ];

@@ -22,5 +22,8 @@ export const COLOR_BLACK = '#000000';
 export const COLOR_GRAY = '#4A5568';
 export const COLOR_GRAY_DARK = '#757575';
 export const COLOR_GRAY_LIGHT = '#E8E8E8';
+export const COLOR_GRAY_LIGHT2 = '#F3F6F9';
 export const COLOR_ERROR = '#E02041';
 export const COLOR_SUCCESS = '#2ECC71';
+export const COLOR_GRADIENT_PRIMARY =
+  'linear-gradient(189deg, rgba(113,63,251,1) 44%, rgba(179,70,252,1) 92%);';

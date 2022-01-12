@@ -27,7 +27,19 @@ export const Wrapper = styled.footer`
     }
 
     @media (max-width: ${C.MD}) {
-      display: none;
+      flex-wrap: wrap;
+
+      ul {
+        width: 50%;
+
+        & + ul {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
     }
   }
 
