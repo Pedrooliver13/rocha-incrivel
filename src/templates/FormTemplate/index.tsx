@@ -1,17 +1,21 @@
 import React from 'react';
+import { ArrowLeft } from '@styled-icons/bootstrap/ArrowLeft';
 
+import StoneLogo from 'assets/stone-logo.svg';
 import Button from 'components/Button';
 import { FormTemplateProps } from 'types/templates/formTemplate';
-import StoneLogo from 'assets/stone-logo.svg';
 
 import * as S from './styles';
+import { Link } from 'react-router-dom';
 
 const FormTemplate: React.FC<FormTemplateProps> = ({
   children,
   handleSubmit,
   title,
   subtitle,
-  buttonLabel
+  buttonLabel,
+  redirect,
+  footerComponent
 }) => {
   return (
     <S.Wrapper>
@@ -21,13 +25,21 @@ const FormTemplate: React.FC<FormTemplateProps> = ({
 
       <section className="login">
         <form className="content" onSubmit={handleSubmit}>
-          <h1 className="content__header">
-            <span>{subtitle}</span>
+          <header className="content__header">
+            <div className="header--subtitle">
+              {subtitle}{' '}
+              {redirect && (
+                <Link to={redirect}>
+                  <ArrowLeft size={20} /> Voltar
+                </Link>
+              )}
+            </div>
             {title}
-          </h1>
+          </header>
 
           {children}
           <Button className="content__button">{buttonLabel}</Button>
+          {footerComponent}
         </form>
       </section>
     </S.Wrapper>
