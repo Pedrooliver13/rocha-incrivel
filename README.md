@@ -1,6 +1,6 @@
 ## :information_source: Como Usar
 
-Para clonar e rodar esse aplicativo, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) or [Yarn](https://yarnpkg.com/getting-started) instalados em seu computador. em seu terminal:
+Para clonar e rodar esse aplicativo, você vai precisar do [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) ou [Yarn](https://yarnpkg.com/getting-started) instalados em seu computador. em seu terminal:
 
 ```bash
 # Clone esse reponsitório
