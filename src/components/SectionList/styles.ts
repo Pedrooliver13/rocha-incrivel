@@ -9,6 +9,10 @@ export const Wrapper = styled.section`
     margin-bottom: 1rem;
 
     &--title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
       font-size: 2rem;
       font-weight: bold;
       padding: 2rem 1rem;
