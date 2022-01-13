@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useGlobalContext } from 'hooks/use-global';
 
-import { UserType } from 'types/api/users';
+import { UserType } from 'types/Api/users';
 import { masks } from 'helpers/masks';
 import {
   formatDate,

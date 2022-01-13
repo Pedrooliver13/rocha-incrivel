@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AuditType } from 'types/api/audits';
+import { AuditType } from 'types/Api/audits';
 import { formatDate } from 'helpers/formatFunctions';
 
 const TableAuditsRow: React.FC<AuditType> = ({

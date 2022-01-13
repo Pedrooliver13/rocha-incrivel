@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AnalystsType } from 'types/api/analysts';
+import { AnalystsType } from 'types/Api/analysts';
 
 const TableAnalystRow: React.FC<AnalystsType> = ({ email, roles }) => {
   return (

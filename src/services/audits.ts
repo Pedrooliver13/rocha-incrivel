@@ -1,6 +1,6 @@
-import { AuditType } from 'types/api/audits';
+import { AuditType } from 'types/Api/audits';
 import { ToastError } from 'components/Toasts';
-import { CardType } from 'types/api/cards';
+import { CardType } from 'types/Api/cards';
 
 export const getAllAudits = async () => {
   try {
