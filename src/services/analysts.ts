@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-import { AnalystsType } from 'types/api/analysts';
+import { AnalystsType } from 'types/Api/analysts';
 import { ToastError } from 'components/Toasts';
 
 export const getAllAnalysts = async () => {

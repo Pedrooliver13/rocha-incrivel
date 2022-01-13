@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Button from 'components/Button';
 import SectionList from 'components/SectionList';
 import CreditCard from 'components/CreditCard';
-import { CardType } from 'types/api/cards';
+import { CardType } from 'types/Api/cards';
 
 import { getAllCards } from 'services/cards';
 

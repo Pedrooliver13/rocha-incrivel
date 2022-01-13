@@ -4,7 +4,7 @@ import Table from 'components/Table';
 import TableAuditsRow from './TableAuditsRow';
 import SectionList from 'components/SectionList';
 
-import { AuditType } from 'types/api/audits';
+import { AuditType } from 'types/Api/audits';
 import { headCells } from 'templates/TableAudits/constants';
 
 import { getAllAudits } from 'services/audits';

@@ -1,4 +1,4 @@
-import { CardType } from 'types/api/cards';
+import { CardType } from 'types/Api/cards';
 import { ToastError } from 'components/Toasts';
 
 export const getAllCards = async () => {

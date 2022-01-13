@@ -17,9 +17,9 @@ import {
   radioOptions
 } from 'pages/Cards/CardForm/constants';
 
-import { UserType } from 'types/api/users';
+import { UserType } from 'types/Api/users';
 import { CardFormProps } from 'types/pages/cardForm';
-import { CardType, CardTypeService } from 'types/api/cards';
+import { CardType, CardTypeService } from 'types/Api/cards';
 
 import { postAudit } from 'services/audits';
 import { getAllUsers } from 'services/users';
