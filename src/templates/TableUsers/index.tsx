@@ -4,7 +4,7 @@ import Table from 'components/Table';
 import TableUsersRow from './TableUsesRow';
 import SectionList from 'components/SectionList';
 
-import { UserType } from 'types/api/users';
+import { UserType } from 'types/Api/users';
 import { headCells } from 'templates/TableUsers/constants';
 
 import { getAllUsers } from 'services/users';

@@ -1,6 +1,6 @@
 import MasterCardLogo from 'assets/mastercard_logo.svg';
 
-import { CardType } from 'types/api/cards';
+import { CardType } from 'types/Api/cards';
 import { abbreviatesStrings } from 'helpers/formatFunctions';
 
 import * as S from './styles';
