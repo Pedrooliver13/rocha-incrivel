@@ -15,7 +15,7 @@ export const validationSchema = (id?: string | number) =>
     limit: Yup.string()
       .length(4, 'Favor inserir 4 Dígitos')
       .required(requiredFieldMessage),
-    userId: id ? Yup.string().required(requiredFieldMessage) : Yup.string()
+    userId: !id ? Yup.string().required(requiredFieldMessage) : Yup.string()
   });
 
 export const initialBeforeState = {
