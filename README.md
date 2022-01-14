@@ -13,7 +13,7 @@ $ cd rocha-incrivel
 $ npm install
 
 # Rode o app e o servidor
-$ npm dev or yarn dev
+$ npm run dev or yarn dev
 
 ```
 
