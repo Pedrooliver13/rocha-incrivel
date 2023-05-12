@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && node ./build/generator.js",
+    "build": "node ./build/generator.js",
     "start": "node ./build/index.js"
   },
   "dependencies": {

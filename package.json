@@ -2,9 +2,6 @@
   "name": "nome-do-meu-app",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "14.x"
-  },
   "cacheDirectories": [
     "node_modules",
     "server/node_modules"
@@ -39,9 +36,9 @@
   "scripts": {
     "dev": "concurrently --kill-others \"yarn run dev:server\" \"yarn run dev:client\"",
     "build": "yarn run build:server && yarn run build:client",
-    "build:server": "cd ./server && yarn && yarn build",
+    "build:server": "./server && yarn && yarn build",
     "dev:client": "react-scripts start",
-    "dev:server": "yarn run build:server && cd ./server && yarn start",
+    "dev:server": "cd ./server && yarn start",
     "build:client": "yarn && react-scripts build",
     "start": "pm2-runtime start pm2.json --env production",
     "serve:kill": "pm2 kill",
